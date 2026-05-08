@@ -17,6 +17,8 @@ export default function Home() {
       <h1 style={{ fontSize: "2.5rem" }}>我的个人博客</h1>
       <hr style={{ margin: "20px 0" }} />
       <div>
+        <h2>简介</h2>
+        <h2>关于我 前端开发 猩崽大叔</h2>
         <h3>文章列表</h3>
         <p>1. Next.js 全栈博客最简部署</p>
         <p>2. Docker + Nginx 搭建个人站点</p>
