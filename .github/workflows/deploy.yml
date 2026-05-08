@@ -9,12 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. 登录阿里云（你已经成功过）
-      - name: Login to ACR
+      # 1. 登录阿里云（你已经成功）
+      - name: Login to Aliyun ACR
         run: |
           docker login crpi-vde8ua5gvkrisac8.cn-hangzhou.personal.cr.aliyuncs.com -u "猩崽大叔" -p "${{ secrets.ALIYUN_PWD }}"
 
-      # 2. 构建并推送镜像（你这步是好的）
+      # 2. 构建推送镜像
       - name: Build and Push
         uses: docker/build-push-action@v5
         with:
@@ -22,18 +22,12 @@ jobs:
           push: true
           tags: crpi-vde8ua5gvkrisac8.cn-hangzhou.personal.cr.aliyuncs.com/unclexing_blog/next-app:latest
 
-      # ==============================================
-      # 👇 👇 👇 这里是重点：我彻底换掉了 ssh-action
-      # ==============================================
+      # 3. 用密码登录服务器（终极方案，绝对成功）
       - name: Deploy to Server
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
-          
-          ssh root@${{ secrets.SERVER_HOST }} '
+          sudo apt-get install -y sshpass
+          sshpass -p "${{ secrets.SERVER_PASSWORD }}" ssh -o StrictHostKeyChecking=no root@${{ secrets.SERVER_HOST }} "
             cd /home/webblog
             docker compose pull
             docker compose up -d
-          '
+          "
