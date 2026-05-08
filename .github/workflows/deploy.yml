@@ -30,6 +30,17 @@ jobs:
           tags: crpi-vde8ua5gvkrisac8.cn-hangzhou.personal.cr.aliyuncs.com/unclexing_blog/next-app:latest
 
       # 👇 登录服务器并更新
+      
+      - name: Install SSH Client
+        run: sudo apt-get install -y openssh-client
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
