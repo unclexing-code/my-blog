@@ -1,9 +1,6 @@
-cat > docker-compose.yml << 'EOF'
-version: '3'
 services:
-  web:
-    build: .
+  app:
+    image: registry.cn-hangzhou.aliyuncs.com/你的命名空间/你的仓库名:latest
     ports:
       - "3000:3000"
     restart: always
-EOF

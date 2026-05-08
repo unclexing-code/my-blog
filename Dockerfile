@@ -1,17 +1,8 @@
-cat > Dockerfile << 'EOF'
 FROM node:18-alpine
-
 WORKDIR /app
-
 COPY package*.json ./
-
-RUN npm install
-
+RUN npm install --registry=https://registry.npmmirror.com
 COPY . .
-
 RUN npm run build
-
 EXPOSE 3000
-
 CMD ["npm", "start"]
-EOF
