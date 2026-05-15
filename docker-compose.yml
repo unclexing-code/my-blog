@@ -7,7 +7,7 @@ services:
 
 
   nginx:
-    image: docker.mirrors.ustc.edu.cn/library/nginx:alpine
+    image: nginx:alpine
     ports:
       - "80:80"
       - "443:443"
