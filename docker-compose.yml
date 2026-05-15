@@ -7,7 +7,7 @@ services:
 
 
   nginx:
-    image: registry.cn-hangzhou.aliyuncs.com/library/nginx:alpine
+    image: registry.cn-hangzhou.aliyuncs.com/acs/nginx:stable-alpine
     ports:
       - "80:80"
       - "443:443"
