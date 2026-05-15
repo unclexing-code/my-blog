@@ -2,5 +2,5 @@ services:
   app:
     image: registry.cn-hangzhou.aliyuncs.com/你的命名空间/你的仓库名:latest
     ports:
-      - "3000:3000"
+      - "80:3000"
     restart: always

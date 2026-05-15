@@ -18,7 +18,7 @@ export default function Home() {
       <hr style={{ margin: "20px 0" }} />
       <div>
         <h2>简介</h2>
-        <h2>关于我 前端开发 猩崽大叔</h2>
+        <h2>Leon Zhou</h2>
         <h3>文章列表</h3>
         <p>1. Next.js 全栈博客最简部署</p>
         <p>2. Docker + Nginx 搭建个人站点</p>
@@ -33,6 +33,20 @@ export default function Home() {
           <p>正在加载 API 数据...</p>
         )}
       </div>
+
+      {/* ICP Filing Number */}
+      <footer style={{ marginTop: "60px", paddingTop: "20px", borderTop: "1px solid #eaeaea", textAlign: "center", color: "#666", fontSize: "14px" }}>
+        <p>
+          <a 
+            href="https://beian.miit.gov.cn/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ color: "#666", textDecoration: "none" }}
+          >
+            京ICP备2026026571号
+          </a>
+        </p>
+      </footer>
     </main>
   );
 }
