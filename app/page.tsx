@@ -19,7 +19,7 @@ export default function Home() {
       <div>
         <h2>简介（已完成https配置）</h2>
         <h2>Leon Zhou</h2>
-        <h3>文章列表</h3>
+        <h3>文章列表（自动拉取最新）</h3>
         <p>1. Next.js 全栈博客最简部署</p>
         <p>2. Docker + Nginx 搭建个人站点</p>
         <p>3. GitHub Actions 自动CI/CD</p>
