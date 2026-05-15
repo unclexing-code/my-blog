@@ -4,18 +4,3 @@ services:
     expose:
       - "3000"
     restart: always
-
-
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      # 挂载你本地的配置文件到容器
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      # 挂载服务器上的证书目录到容器（ssl 文件夹不用提交Git，服务器本地生成）
-      - ./nginx/ssl:/etc/nginx/ssl
-    depends_on:
-      - app
-    restart: always
