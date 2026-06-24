@@ -8,7 +8,6 @@ import { BackgroundProvider } from "@/components/providers/BackgroundProvider";
 import { MusicProvider } from "@/components/providers/MusicProvider";
 import { EffectProvider } from "@/components/providers/EffectProvider";
 import BackgroundRenderer from "@/components/layout/BackgroundRenderer";
-import Navbar from "@/components/layout/Navbar";
 import ClickEffect from "@/components/ui/ClickEffect";
 import RadialMenu from "@/components/ui/RadialMenu";
 import MouseTrail from "@/components/ui/MouseTrail";
